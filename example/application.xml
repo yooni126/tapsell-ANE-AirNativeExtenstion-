@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<application xmlns="http://ns.adobe.com/air/application/51.3">
+    <id>ir.tapsell.ane.example</id>
+    <versionNumber>1.0.0</versionNumber>
+    <filename>TapsellANEExample</filename>
+    <name>Tapsell ANE Example</name>
+    <supportedProfiles>mobileDevice</supportedProfiles>
+    <android>
+        <gradleVersion>8.9</gradleVersion>
+        <androidGradlePluginVersion>8.7.3</androidGradlePluginVersion>
+        <androidCompileSdkVersion>34</androidCompileSdkVersion>
+        <buildArchitectures>armv8</buildArchitectures>
+        <manifestAdditions><![CDATA[
+<manifest android:installLocation="auto">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <application android:hardwareAccelerated="true" />
+</manifest>
+        ]]></manifestAdditions>
+    </android>
+    <initialWindow>
+        <content>Main.swf</content>
+        <visible>true</visible>
+        <fullScreen>false</fullScreen>
+        <autoOrients>true</autoOrients>
+        <aspectRatio>portrait</aspectRatio>
+        <renderMode>direct</renderMode>
+    </initialWindow>
+    <extensions>
+        <extensionID>ir.tapsell.ane</extensionID>
+    </extensions>
+</application>

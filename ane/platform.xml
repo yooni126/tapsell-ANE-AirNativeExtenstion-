@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<platform xmlns="http://ns.adobe.com/air/extension/51.3">
+    <packagedDependencies />
+    <packagedResources />
+    <gradle>
+        <repositories>
+            <repository>maven { url 'https://maven.aliyun.com/repository/google' }</repository>
+            <repository>mavenCentral()</repository>
+            <repository>maven { url 'https://maven.tapsell.ir' }</repository>
+        </repositories>
+        <dependencies>
+            <dependency>implementation 'ir.tapsell.sdk:tapsell-sdk-android:4.9.15'</dependency>
+        </dependencies>
+    </gradle>
+</platform>

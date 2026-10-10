@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+def airSdkDir = providers.gradleProperty("airSdkDir")
+        .orElse(providers.environmentVariable("AIR_SDK_HOME"))
+        .orNull
+
+if (airSdkDir == null || airSdkDir.trim().isEmpty()) {
+    throw new GradleException("AIR SDK path is required. Pass -PairSdkDir=<path> or set AIR_SDK_HOME.")
+}
+
+def freJar = file("${airSdkDir}/lib/android/FlashRuntimeExtensions.jar")
+if (!freJar.exists()) {
+    throw new GradleException("FlashRuntimeExtensions.jar was not found at: ${freJar}")
+}
+
+android {
+    namespace 'ir.tapsell.ane'
+    compileSdk providers.gradleProperty("androidCompileSdk").orElse("34").get().toInteger()
+
+    defaultConfig {
+        minSdk 21
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compileOnly files(freJar)
+
+    // Runtime dependencies are declared again in ane/platform.xml so AIR's
+    // final Android Gradle build receives every transitive AAR and resource.
+    compileOnly('ir.tapsell.sdk:tapsell-sdk-android:4.9.15') {
+        transitive = false
+    }
+}

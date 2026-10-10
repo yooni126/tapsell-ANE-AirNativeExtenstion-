@@ -1,0 +1,15 @@
+{
+  "type": "app",
+  "config": "airmobile",
+  "files": ["src/Main.as"],
+  "compilerOptions": {
+    "source-path": ["src"],
+    "library-path": ["../dist/TapsellANE.ane"],
+    "output": "bin/Main.swf",
+    "default-size": {"width": 480, "height": 640},
+    "default-frame-rate": 30,
+    "swf-version": 51
+  },
+  "application": "application.xml"
+}
+

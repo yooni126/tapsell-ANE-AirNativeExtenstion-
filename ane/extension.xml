@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension xmlns="http://ns.adobe.com/air/extension/51.3">
+    <id>ir.tapsell.ane</id>
+    <name>Tapsell ANE</name>
+    <versionNumber>1.0.0</versionNumber>
+    <platforms>
+        <platform name="Android-ARM">
+            <applicationDeployment>
+                <nativeLibrary>classes.jar</nativeLibrary>
+                <initializer>ir.tapsell.ane.TapsellExtension</initializer>
+                <finalizer>ir.tapsell.ane.TapsellExtension</finalizer>
+            </applicationDeployment>
+        </platform>
+        <platform name="Android-ARM64">
+            <applicationDeployment>
+                <nativeLibrary>classes.jar</nativeLibrary>
+                <initializer>ir.tapsell.ane.TapsellExtension</initializer>
+                <finalizer>ir.tapsell.ane.TapsellExtension</finalizer>
+            </applicationDeployment>
+        </platform>
+        <platform name="Android-x86">
+            <applicationDeployment>
+                <nativeLibrary>classes.jar</nativeLibrary>
+                <initializer>ir.tapsell.ane.TapsellExtension</initializer>
+                <finalizer>ir.tapsell.ane.TapsellExtension</finalizer>
+            </applicationDeployment>
+        </platform>
+        <platform name="Android-x64">
+            <applicationDeployment>
+                <nativeLibrary>classes.jar</nativeLibrary>
+                <initializer>ir.tapsell.ane.TapsellExtension</initializer>
+                <finalizer>ir.tapsell.ane.TapsellExtension</finalizer>
+            </applicationDeployment>
+        </platform>
+        <platform name="default">
+            <applicationDeployment />
+        </platform>
+    </platforms>
+</extension>

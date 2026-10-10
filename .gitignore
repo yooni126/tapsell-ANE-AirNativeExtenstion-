@@ -1,0 +1,6 @@
+.gradle/
+**/build/
+dist/
+example/bin/
+example/.tmp/
+
